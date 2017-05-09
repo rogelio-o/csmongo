@@ -533,12 +533,6 @@ public abstract class CsActiveRecord<T extends CsActiveRecord<T>> extends CsActi
 		updateAllFree(query, update, handler);
 	}
 	
-	public void removeAttributesAll(JsonObject query, JsonObject update, Handler<AsyncResult<Void>> handler) {
-		update = new JsonObject().put("$unset", update);
-		
-		updateAllFree(query, update, handler);
-	}
-	
 	public void updateAllFree(JsonObject query, JsonObject update, Handler<AsyncResult<Void>> handler) {
 		try {
 			UpdateOptions options = new UpdateOptions();
